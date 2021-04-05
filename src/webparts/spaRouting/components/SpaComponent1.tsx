@@ -5,6 +5,8 @@ import { escape } from '@microsoft/sp-lodash-subset';
 
 
 
+
+
 export default class SpaComponent1 extends React.Component<ISpaComponent1Props, {}> {
 
   private getCounter = this.props.getCounter;
