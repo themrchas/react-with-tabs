@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "spa-routing-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/spaRouting/SpaRoutingWebPart.js",
+          "manifest": "./src/webparts/spaRouting/SpaRoutingWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SpaRoutingWebPartStrings": "lib/webparts/spaRouting/loc/{locale}.js"
+  }
+}
