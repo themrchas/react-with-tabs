@@ -2,9 +2,9 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
+React tab format and PnP CRUD operations demo.
 
-[picture of the solution in action, if possible]
+
 
 ## Used SharePoint Framework Version
 

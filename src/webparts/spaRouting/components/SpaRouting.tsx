@@ -7,6 +7,10 @@ import  SpaComponent1  from './SpaComponent1';
 import  SpaComponent2  from './SpaComponent2';
 
 
+//The following are for React UI
+import { AppBar, Tabs, Tab } from '@material-ui/core'
+
+
 //react router 
 import {
   BrowserRouter as Router,
@@ -15,6 +19,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { PopupWindowPosition } from '@microsoft/sp-property-pane';
 
 
 interface IState {
@@ -61,6 +66,21 @@ export default class SpaRouting extends React.Component<ISpaRoutingProps, IState
   })
 }
 
+tabSelected = (event: object, value: any): void => {
+
+  console.log("tabSelected: event is:",event,"value",value);
+  console.log("current url is",window.location.href);
+  console.log("current window hash is", window.location.hash);
+
+  if (value == 0) {
+    window.location.hash = "#/spacomp1";
+  }
+  else 
+    window.location.hash = "#/spacomp2";
+}
+
+
+
 
   public render(): React.ReactElement<ISpaRoutingProps> {
     return (
@@ -78,11 +98,20 @@ export default class SpaRouting extends React.Component<ISpaRoutingProps, IState
           </div>
         </div>
 
+        <AppBar position="static">
+      {/*  <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+          </Tabs> */}
+          <Tabs value="tab value property"  onChange={this.tabSelected} aria-label="simple tabs example">
+            <Tab label="Component 1"></Tab>
+            <Tab label="Component 2"></Tab>
+          </Tabs> 
+        </AppBar>
+
 
 
         <HashRouter>
 
-          <div> 
+       {/*}   <div> 
             <nav>
               <ul>
                 <li>
@@ -94,7 +123,7 @@ export default class SpaRouting extends React.Component<ISpaRoutingProps, IState
  
               </ul>
             </nav>
-         </div> 
+        </div> */}
 
 
           <Switch>
